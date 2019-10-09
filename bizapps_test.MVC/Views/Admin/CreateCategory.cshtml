@@ -1,0 +1,29 @@
+﻿
+@model bizapps_test.MVC.Models.CategoryViewModel
+
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Html.EnableClientValidation();
+}
+
+<div class="PostViewContainer">
+    @using (@Html.BeginForm("CreateUpdateCategoryDo", "Admin", FormMethod.Post))
+    {
+        <h2 style="margin: 0;">
+            Category creation
+        </h2> <br/>
+    
+         Html.RenderAction("CategoryUpdateList", "Home");
+        <p style="margin-bottom: 0; padding-bottom: 5px; padding-top: 5px;">
+            <b> <label>Category name:</label> </b>
+            @Html.EditorFor(category => category.CategoryName, new { htmlAttributes = new { @class = "textboxPostTitle" } })
+        </p>
+        @Html.ValidationMessageFor(category => category.CategoryName)
+        <br/>
+
+        <input type="submit" id="ButtonCreateCategory" value="Create category" class="buttonOnWhitePanel"/>
+    }
+   
+    
+</div>

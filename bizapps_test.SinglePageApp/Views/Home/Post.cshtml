@@ -1,0 +1,65 @@
+﻿
+<div class="row">
+    <div id="postView" class=" col-lg-9 PostViewContainer" >
+        <input id="postId" data-bind="value: ViewModelsKO.PostViewModel.Id" type="hidden"/>
+        <img src="~/Images/Default.jpeg" class="postimage">
+        <p style="text-align: justify;">
+            <h2 id="PostTitle" data-bind="text: ViewModelsKO.PostViewModel.PostTitle"></h2>
+            <label id="labelDate" class="text-right" data-bind="text: ViewModelsKO.PostViewModel.CreationDate"></label>
+        </p>
+
+        <div class="divBodyHolder" id="divBodyHolder" data-bind="html: ViewModelsKO.PostViewModel.PostContent">
+        </div>
+        <p>
+            Categories:
+            <ul data-bind="foreach: ViewModelsKO.PostViewModel.PostCategories" class="list-inline" style="font-style: italic;">
+                <li>
+                    <span data-bind="text: CategoryName"></span>
+                </li>
+            </ul>
+        </p>
+        <br />
+
+        <div id="ajaxcommentpanel">
+            <div class="container comment-container" id="commentcontainer">
+                <textarea id="areaCommentText" class="commentarea" placeholder = "Join the discussion..." style="margin-bottom: 0"></textarea> 
+                <p id="mainCommentValidator"  class="comment-validator-container">
+                    <span style="float: left;" class="glyphicon glyphicon-warning-sign"> </span> 
+                    <span class="comment-validator" style="float: left; margin-left: 10px;">Comment Text is not set</span>
+                    <button class="btn-closevalidator" onclick="InterfaceActions.HideMainCommentValidator($(this));" type="button">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </button>  
+                </p>
+                <button id="buttonPostComment" class="button-save-edit" style="display: none;" onclick="CommentCRUD.CreateComment();">Post as</button>
+                <p class="panel-edit">
+                    <label id="labelUserName" class="LabelCommentUser commentarea-message">
+                        
+                    </label>
+                    
+                </p>
+                
+                <div id="divComments" data-bind="foreach: PostComments">
+
+                    <div style="margin-top: 20px; width: 100%;" class="comment-item">
+                        <input class="hidden-commentid" type="hidden" data-bind="value: Id" />
+                        <p style="margin: 0; margin-bottom: 2px;">
+                            <b style="font-size: 12px; color: #474747;"><span class="CommentUserName" data-bind="text: CreatedBy.UserName"></span></b>
+                            <i style="font-size: 10px; color: #c2c6cc;"> • </i>
+                            <span class="CommentDate" style="font-size: 11px; color: #999ea7;" data-bind="text: CreationDate"></span>
+                        </p>
+                        <p style="margin: 0; margin-bottom: 2px; width: 100%; padding: 5px; padding-bottom: 10px;" class="CommentText" data-bind="text: CommentText">
+                        </p>
+                            <div class="commentActionsForAuthorized"></div>
+                    </div>
+
+                </div>                       
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+

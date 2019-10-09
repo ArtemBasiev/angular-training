@@ -1,0 +1,33 @@
+﻿
+@model bizapps_test.MVC.Models.CommentViewModel
+
+
+@using (Ajax.BeginForm("ChangeComment", "Comment", new AjaxOptions {UpdateTargetId = "ajaxcommentpanel" }))
+{
+<div id="divCommentEdit" class="divCommentEdit">
+    @Html.EditorFor(comment => comment.CommentText, "", new { htmlAttributes = new { @class = "commentarea", placeholder = "Edit comment..." } })
+    <p class="comment-validator-container">
+        @Html.ValidationMessageFor(comment => comment.CommentText, "", new { @class = "comment-validator" })
+        @*<asp:RequiredFieldValidator ValidationGroup="EditCommentTextArea" ControlToValidate="EditCommentTextArea" CssClass="comment-validator" Display="Dynamic" ErrorMessage="Comment Text is not set" ForeColor="White" runat="server">
+                <span style="float: left;" class="glyphicon glyphicon-warning-sign"></span> <span style="float: left; margin-left: 10px;">Comment Text is not set</span> <button class="btn-closevalidator" onclick="hideValidator($(this));" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+            </asp:RequiredFieldValidator>*@
+    </p>
+    <input type="submit" id="ButtonSaveCommentEdit" value="Save Edit" class="button-save-edit" />
+    <p class="panel-edit">
+        <label id="LabelCommentUser" name=@Html.DisplayNameFor(comment => comment.ActiveUser) style="margin: 0;" class="commentarea-message">
+            @Html.DisplayFor(comment => comment.ActiveUser)
+            @Html.HiddenFor(comment => comment.ActiveUser)
+        </label>
+        <button type="button" id="ButtonCancelEdit" onclick="displayEditComment($(this));" class="button-cancel">Cancel</button>
+    </p>
+    @Html.HiddenFor(comment => comment.Id)
+    @Html.HiddenFor(comment => comment.PostId)
+</div>
+}
+        
+
+
+       
+        
+
+   

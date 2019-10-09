@@ -1,0 +1,7 @@
+namespace bizapps_test.SL.API_Services.Areas.HelpPage.ModelDescriptions
+{
+    public class CollectionModelDescription : ModelDescription
+    {
+        public ModelDescription ElementDescription { get; set; }
+    }
+}

@@ -1,0 +1,56 @@
+﻿
+@model bizapps_test.MVC.Models.CommentViewModel
+
+
+@{Html.EnableClientValidation();}
+
+
+
+<div class="container comment-container" id="commentcontainer">
+    @using (Ajax.BeginForm("CreateComment", "Comment", new AjaxOptions { UpdateTargetId = "ajaxcommentpanel" }))
+    {
+
+        @Html.EditorFor(comment => comment.CommentText, "", new { htmlAttributes = new { @class = "commentarea", placeholder = "Join the discussion..." } })
+        <br />
+        <p class="comment-validator-container">
+            @*<i class="glyphicon glyphicon-warning-sign valicon"></i>*@
+            @Html.ValidationMessageFor(comment => comment.CommentText, "", new {@class = "comment-validator"})
+            @*@Html.CommentValidatorFor(comment => comment.CommentText)*@
+         
+            @*<asp:RequiredFieldValidator ValidationGroup="MainCommentTextArea" ControlToValidate="CommentTextArea" CssClass="comment-validator" Display="Dynamic" ErrorMessage="Comment Text is not set" ForeColor="White" runat="server">
+                    <span style="float: left;" class="glyphicon glyphicon-warning-sign"></span> <span style="float: left; margin-left: 10px;">Comment Text is not set</span> <button class="btn-closevalidator" onclick="hideValidator($(this));" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+                </asp:RequiredFieldValidator>*@
+        </p>
+        if (!string.IsNullOrEmpty(Model.ActiveUser))
+        {
+            <input id="ButtonPostComment" type="submit" value="Post as @Html.DisplayFor(comment => comment.ActiveUser)" class="button-save-edit" />
+            <p class="panel-edit">
+                <label id="LabelCommentUser" class="commentarea-message">
+                    @Html.DisplayFor(comment => comment.ActiveUser)
+                    @Html.HiddenFor(comment => comment.ActiveUser)
+                </label>
+            </p>
+
+        }
+        else
+        {
+            <p class="panel-edit">
+                <label id="LabelCommentUser" class="commentarea-message">
+                    Sign in to comment
+                </label>
+
+            </p>
+        }
+        @Html.HiddenFor(comment => comment.PostId)
+
+
+
+    }
+    @{
+        Html.RenderAction("CommentList", "Comment", Model);
+    }
+</div>
+
+<script src="~/Scripts/comment-scripts.js"></script>
+
+<script src="~/Scripts/CustomValidation.js"></script>

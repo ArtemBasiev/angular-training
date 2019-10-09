@@ -1,0 +1,40 @@
+﻿@model bizapps_test.MVC.Models.BlogUserViewModel
+
+@{Html.EnableClientValidation();}
+
+@if (Model == null)
+{
+  using (Html.BeginForm("Login", "Account"))
+   {
+     <div class="panel panel-default sidebar" id="loginform">
+         <h4>Log In</h4>
+         <span style="float: left; margin-left: 20px;">Login</span><br />
+         <div class="loginform-editor-field">
+             @Html.EditorFor(model => model.UserName)<br />
+             @Html.ValidationMessageFor(model => model.UserName)
+         </div>
+         <span style="float: left; margin-left: 20px;">Password</span><br />
+         <div class="loginform-editor-field">
+             @Html.EditorFor(model => model.UserPassword)<br />
+             @Html.ValidationMessageFor(model => model.UserPassword)
+         </div>
+         <button id="Login" value="Login" type="submit" class="Login">Log In</button>
+         @Html.ActionLink("Sign In","SignIn","Account")
+     </div>
+    }
+}
+else
+{
+    <div class="panel panel-default sidebar" id="LogoutPanel" style="text-align: left;" >
+        <label id="LabelUserName" >@Html.DisplayFor(user =>user.UserName )</label>
+        <p style="margin-top: 20px; margin-left: 10px;">
+            <i>  •  </i>
+            @Html.ActionLink("Sign Out", "SignOut", "Account")
+            <i> • </i>
+            @Html.ActionLink("Change password", "ChangePassword", "Account")
+            <i>  •  </i>
+        </p>
+
+    </div>
+}
+

@@ -1,0 +1,126 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  
+    @*@Scripts.Render("~/bundles/css")*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/fonts/stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top header">
+
+        <div id="headdiv" class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="toggle-btn navbar-left" onclick="InterfaceActions.OpenMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span id="menu-username" class="navbar-left"></span>
+                </div>
+
+                <div class="col-lg-9">
+                    <a class="navbar-brand navbar-right brand" href="#"><span id="blogtitle"></span></a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <div id="sidebar">
+
+
+        <div class="panel panel-default sidebar" id="loginform">
+            <h4>Log In</h4>
+            <span style="float: left; margin-left: 20px;">Login</span>
+            <span id="sidebarLoginValMessage" class="validation-message">Input login</span>
+            <br />
+            <div class="loginform-editor-field">
+                <input id="username" type="text" class="textbox-loginform" /><br />
+            </div>
+            <span style="float: left; margin-left: 20px;">Password</span>
+            <span id="sidebarPasswordValMessage" class="validation-message">Input password</span>
+            <br />
+            <div class="loginform-editor-field">
+                <input id="password" type="password" class="textbox-loginform" /><br />
+            </div>
+            <button id="logIn" value="Login" type="button" class="Login">Log In</button>
+            <i> • </i>
+            <a onclick="window.location.hash = 'reg';" style="cursor: pointer;">Registration</a>
+        </div>
+
+        <div class="panel panel-default sidebar" id="logoutpanel" style="text-align: left; display: none">
+            <ul>
+                <li id="li-createblog"><button onclick="window.location.hash = 'edit';">Blog</button></li>
+            </ul>
+            <input id="userid" type="hidden" />
+            <p style="margin-top: 20px; margin-left: 10px;">
+                <i> • </i>
+                <button id="logOut">Sign Out</button>
+                <i> • </i>
+            </p>
+        </div>
+    </div>
+    <div class="container" id="wrap" style="height: auto;">
+
+    </div>
+    <footer>
+        <div class="container">
+            <span id="footer-text"> 2019  All rights reserved</span>
+        </div>
+    </footer>
+
+
+@*@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery.unobtrusive-ajax")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/knockout-paging")
+    @Scripts.Render("~/bundles/knockout-mapping")
+    @Scripts.Render("~/bundles/Authorization")
+    @Scripts.Render("~/bundles/CookieHandler")
+    @Scripts.Render("~/bundles/WebApiConfig")
+    @Scripts.Render("~/bundles/ViewModels")
+    @Scripts.Render("~/bundles/ViewModelsSetting")
+    @Scripts.Render("~/bundles/ViewsGetting")
+    @Scripts.Render("~/bundles/PuttingViewToWrap")
+    @Scripts.Render("~/bundles/CRUDBlog")
+    @Scripts.Render("~/bundles/CRUDPost")
+    @Scripts.Render("~/bundles/CRUDCategory")
+    @Scripts.Render("~/bundles/InterfaceLogic")*@
+    
+
+
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/Scripts/knockout-3.5.0.js"></script>
+        <script src="~/Scripts/knockout-paging.min.js"></script>
+        <script src="~/Scripts/knockout.mapping-latest.js"></script>
+    
+        <script src="~/Scripts/SpaLogic/CustomValidation.js"></script>
+        <script src="~/Scripts/SpaLogic/AuthorizationModule.js"></script>
+        <script src="~/Scripts/SpaLogic/CookieHandler.js"></script>
+        <script src="~/Scripts/SpaLogic/WebApiConfig.js"></script>
+        <script src="~/Scripts/SpaLogic/ViewModelsKO.js"></script>
+        <script src="~/Scripts/SpaLogic/ViewModelsSetter.js"></script>
+        <script src="~/Scripts/SpaLogic/ViewsGetter.js"></script>
+        <script src="~/Scripts/SpaLogic/WrapModule.js"></script>
+        <script src="~/Scripts/SpaLogic/BlogCRUD.js"></script>
+        <script src="~/Scripts/SpaLogic/CategoryCRUD.js"></script>
+        <script src="~/Scripts/SpaLogic/PostCRUD.js"></script>
+        <script src="~/Scripts/SpaLogic/CommentCRUD.js"></script>
+        <script src="~/Scripts/SpaLogic/InterfaceLogic.js"></script>
+
+</body>
+</html>

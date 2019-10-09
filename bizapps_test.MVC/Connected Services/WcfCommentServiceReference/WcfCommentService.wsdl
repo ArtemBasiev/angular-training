@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfCommentService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/WcfCommentService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/WcfCommentService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/WcfCommentService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/bizapps_test.SL.Wcf_Services.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWcfCommentService_CreateComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateComment" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_CreateComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_UpdateComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateComment" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_UpdateComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_DeleteComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteComment" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_DeleteComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_GetIndependentComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndependentComments" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_GetIndependentComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndependentCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_GetCommentAnswers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentAnswers" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_GetCommentAnswers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentAnswersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_GetComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComment" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_GetComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_HaveMoreThanFourLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:HaveMoreThanFourLevels" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCommentService_HaveMoreThanFourLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HaveMoreThanFourLevelsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWcfCommentService">
+    <wsdl:operation name="CreateComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCommentService/CreateComment" message="tns:IWcfCommentService_CreateComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCommentService/CreateCommentResponse" message="tns:IWcfCommentService_CreateComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCommentService/UpdateComment" message="tns:IWcfCommentService_UpdateComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCommentService/UpdateCommentResponse" message="tns:IWcfCommentService_UpdateComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCommentService/DeleteComment" message="tns:IWcfCommentService_DeleteComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCommentService/DeleteCommentResponse" message="tns:IWcfCommentService_DeleteComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndependentComments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCommentService/GetIndependentComments" message="tns:IWcfCommentService_GetIndependentComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCommentService/GetIndependentCommentsResponse" message="tns:IWcfCommentService_GetIndependentComments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentAnswers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCommentService/GetCommentAnswers" message="tns:IWcfCommentService_GetCommentAnswers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCommentService/GetCommentAnswersResponse" message="tns:IWcfCommentService_GetCommentAnswers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCommentService/GetComment" message="tns:IWcfCommentService_GetComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCommentService/GetCommentResponse" message="tns:IWcfCommentService_GetComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HaveMoreThanFourLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCommentService/HaveMoreThanFourLevels" message="tns:IWcfCommentService_HaveMoreThanFourLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCommentService/HaveMoreThanFourLevelsResponse" message="tns:IWcfCommentService_HaveMoreThanFourLevels_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWcfCommentService" type="tns:IWcfCommentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateComment">
+      <soap:operation soapAction="http://tempuri.org/IWcfCommentService/CreateComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateComment">
+      <soap:operation soapAction="http://tempuri.org/IWcfCommentService/UpdateComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteComment">
+      <soap:operation soapAction="http://tempuri.org/IWcfCommentService/DeleteComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndependentComments">
+      <soap:operation soapAction="http://tempuri.org/IWcfCommentService/GetIndependentComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentAnswers">
+      <soap:operation soapAction="http://tempuri.org/IWcfCommentService/GetCommentAnswers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <soap:operation soapAction="http://tempuri.org/IWcfCommentService/GetComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HaveMoreThanFourLevels">
+      <soap:operation soapAction="http://tempuri.org/IWcfCommentService/HaveMoreThanFourLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfCommentService">
+    <wsdl:port name="BasicHttpBinding_IWcfCommentService" binding="tns:BasicHttpBinding_IWcfCommentService">
+      <soap:address location="http://localhost:8080/WcfCommentService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

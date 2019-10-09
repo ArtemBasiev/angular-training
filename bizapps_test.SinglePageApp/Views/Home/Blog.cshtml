@@ -1,0 +1,48 @@
+﻿
+<div class="row" style="height: auto; margin-bottom: 60px;">
+    <div class="col-lg-9" style="padding-right: 30px; padding-left: 0;">
+        <div id="divContent" class="blog-container">
+            <div id="divPostList">
+                <div data-bind="foreach: ViewModelsKO.FilteredPosts.pageItems">
+                    <div class=" blogpanel">
+                        <img src="~/Images/Default.jpeg" class="postimage">
+                        <h2 data-bind="text: PostTitle"></h2>
+                        <p> <span data-bind="text: CreationDate"></span> </p>
+
+                        <button class="ButtonShowMore" data-bind="click:  function(data, event) { HashModule.SetPostHash(Id) }">
+                            Read More
+                            <i class="glyphicon  glyphicon-arrow-right"></i>
+                        </button>
+
+                        <br />
+                        <ul data-bind="foreach: PostCategories" class="list-inline" style="font-style: italic;">
+                            <li>
+                                <span data-bind="text: CategoryName"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pager">
+                    <p>
+                        <button data-bind="click: ViewModelsKO.FilteredPosts.toPreviousPage()" class="btn-opacity"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                        <b><span data-bind="text: ViewModelsKO.FilteredPosts.pageNumber"></span></b>
+                        <button data-bind="click: ViewModelsKO.FilteredPosts.toNextPage()" class="btn-opacity"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-lg-3 sidebarcontainer">
+        <div class="panel panel-default sidebar" style="text-align: left;">
+            <h4>CATEGORIES</h4>
+            <div id="categorycontainer" class="sidebarlistcontainer blogBindable">
+                <ul class="SideBarList" data-bind="foreach: ViewModelsKO.BlogViewModel.blogCategories">
+                    <li> <button type="button" data-bind="text: CategoryName, click:  function(data, event) { ViewModelsKO.FilterByCategoryId( Id, event) }"></button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

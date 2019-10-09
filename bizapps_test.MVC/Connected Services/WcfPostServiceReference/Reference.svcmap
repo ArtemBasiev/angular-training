@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3d47bd37-9076-457f-96dc-b3e699a040aa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/WcfPostService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfPostService.disco" MetadataType="Disco" ID="dec64a15-5b38-4d04-bbac-e443a4434719" SourceId="1" SourceUrl="http://localhost:8080/WcfPostService.svc?disco" />
+    <MetadataFile FileName="WcfPostService.xsd" MetadataType="Schema" ID="94c1a2f5-1d17-4cd9-8695-c99a22ff1bee" SourceId="1" SourceUrl="http://localhost:8080/WcfPostService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WcfPostService1.xsd" MetadataType="Schema" ID="16679d7b-3be6-420a-8a05-2266bfe54097" SourceId="1" SourceUrl="http://localhost:8080/WcfPostService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WcfPostService2.xsd" MetadataType="Schema" ID="68786594-0db5-4f6a-9ed8-6920e978abc8" SourceId="1" SourceUrl="http://localhost:8080/WcfPostService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WcfPostService.wsdl" MetadataType="Wsdl" ID="2226262b-e4e7-4cbf-b708-c375b0b5c53f" SourceId="1" SourceUrl="http://localhost:8080/WcfPostService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

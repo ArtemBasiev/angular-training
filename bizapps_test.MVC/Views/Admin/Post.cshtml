@@ -1,0 +1,51 @@
+﻿
+@model bizapps_test.MVC.Models.PostViewMoreModel
+@{
+    ViewBag.Title = "Post View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="PostViewContainer">
+    <img src=@Html.DisplayFor(post => post.Post.PostImage) class="postimage">
+    <p style="text-align: justify;">
+        <h2 id="PostTitle">@Html.DisplayFor(post => post.Post.Title)</h2>
+        <label id="labelDate" class="text-right">@Html.DisplayFor(post => post.Post.CreationDate)</label>
+    </p>
+        
+        
+
+<div class="divBodyHolder" id="divBodyHolder">
+   @Html.Raw(Model.Post.Body)
+</div>
+    @if (Model.Post.Categories.Length > 0)
+    {
+        <p>
+            Categories:
+            @foreach (var postCategory in Model.Post.Categories)
+            {
+                @Html.ActionLink(postCategory.CategoryName, "Index","Home", new { categoryId = postCategory.Id }, null)
+                @Html.Raw("    ")
+                <i class="glyphicon glyphicon-minus"></i>
+            }
+        </p>
+    }<br/>    
+
+    @{
+        if (Context.User.IsInRole("Admin"))
+        {
+            Html.RenderAction("ChangePostLink", "Admin", Model.Post);
+        }
+       
+            } <br/><br/>
+ 
+    
+    <div id="ajaxcommentpanel">
+        @{
+            Html.RenderAction("Index", "Comment", Model.Post);
+        }
+    </div>
+   
+   
+    
+</div>

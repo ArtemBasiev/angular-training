@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="65dda116-368a-4165-9fac-cb387c9e9b0a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/WcfCommentService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfCommentService.disco" MetadataType="Disco" ID="49cfd30a-2333-46aa-9e37-d50c1ee2bf9f" SourceId="1" SourceUrl="http://localhost:8080/WcfCommentService.svc?disco" />
+    <MetadataFile FileName="WcfCommentService.xsd" MetadataType="Schema" ID="efaf8053-f284-47f3-a73f-eefcc8234281" SourceId="1" SourceUrl="http://localhost:8080/WcfCommentService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WcfCommentService.wsdl" MetadataType="Wsdl" ID="8716b731-a517-40fc-8e27-97047fc02710" SourceId="1" SourceUrl="http://localhost:8080/WcfCommentService.svc?wsdl" />
+    <MetadataFile FileName="WcfCommentService1.xsd" MetadataType="Schema" ID="ef27016f-5cc6-49eb-9eed-13411ac81894" SourceId="1" SourceUrl="http://localhost:8080/WcfCommentService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WcfCommentService2.xsd" MetadataType="Schema" ID="1497ef6d-610c-4e6e-affe-8ddc38487162" SourceId="1" SourceUrl="http://localhost:8080/WcfCommentService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

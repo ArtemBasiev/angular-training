@@ -1,0 +1,91 @@
+﻿@using bizapps_test.MVC.Controllers
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/fonts/stylesheet.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+@*<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    </body>*@
+<body>
+    <nav class="navbar navbar-fixed-top header">
+        <div id="headdiv" class="container ">
+            <div class="row">
+                <div class="col-lg-3">
+                    <a class="navbar-brand brand" href="#">itBL<i class="glyphicon glyphicon-cog"> </i>GER</a>
+                </div>
+                <div class="col-lg-9">
+                    <ul class="navbar navbar-nav navbar-right list-inline" id="navbarlist" runat="server">
+                        <li>Category</li>
+                        <li>About</li>
+                        <li>Contacts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="wrap" style=" height: auto;">
+        <div class="row" style="height: auto;  margin-bottom: 60px;">
+            <div class="col-lg-9" style="padding-right: 30px; padding-left: 0;">
+                @RenderBody()
+            </div>
+            <div class="col-lg-3 sidebarcontainer pinned">
+                @{
+                    Html.RenderAction("CategorySideBar", "Home");
+                    if (Context.User.IsInRole("Admin"))
+                    {
+                        Html.RenderAction("AdministrationPanel", "Account");
+                    }             
+                    Html.RenderAction("LoginForm", "Account");
+                }
+               
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <span id="footer-text"> 2019  All rights reserved</span>
+        </div>
+    </footer>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script> $(".pinned").pin(); </script>
+</body>
+</html>

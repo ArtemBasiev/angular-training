@@ -1,0 +1,98 @@
+﻿
+<div id="userblog">
+    <div id="divCreateBlog" style="display: none;" class="main-container">
+        <h4>Create your blog here</h4><br /><br />
+        <span>Blog title</span>
+        <input id="textBlogTitle" type="text" /><br />
+        <button class="buttonOnWhitePanel" onclick="BlogCRUD.CreateBlog();">Create</button>
+        <span id="blogcreation-message" style="color: red"></span>
+        <span id="blogcreationValidationMessage" class="validation-message" >Blog Title can't be empty!</span>
+    </div>
+
+    <div id="divEditBlog" >
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active tab"><a data-toggle="blog" onclick="InterfaceActions.ShowTab($(this).attr('data-toggle'));">Blog info</a></li>
+            <li class="tab"><a data-toggle="posts" onclick="InterfaceActions.ShowTab($(this).attr('data-toggle'));">Posts</a></li>
+            <li class="tab"><a data-toggle="categories" onclick="InterfaceActions.ShowTab($(this).attr('data-toggle'));">Categories</a></li>
+        </ul>
+        <div class="main-container">
+
+            <div id="blog" class="div-tab">
+                <input id="blogid" type="hidden" data-bind="value: ViewModelsKO.EditableBlogViewModel.blogId" />
+                <span>Your blog: </span>
+                <p>
+                    <button class="glyph-btn" onclick="BlogCRUD.EnableBlogEditing();"><i class="glyphicon glyphicon-pencil"></i>...</button>
+                    <span id="spanBlogTitle" data-bind="text: ViewModelsKO.EditableBlogViewModel.blogTitle"></span>
+                    <input id="textEditableBlogTitle" type="text" style="display: none; width: 100px;" data-bind="value: ViewModelsKO.EditableBlogViewModel.blogTitle" />
+                    <button id="btnSaveBlog" class="glyph-btn btn-save" style="display: none;" onclick="BlogCRUD.SaveBlogChanges();">Save</button>
+                    <span id="blogTitleValidationMessage" class="validation-message">Blog Title can't be empty!</span>
+                </p>
+
+                <button onclick="window.location.hash = 'blog'+$('#blogid').val();" class="buttonOnWhitePanel">Review</button>
+                <button onclick="BlogCRUD.DeleteBlog();" class="btn btn-danger">Delete</button>
+            </div>
+
+            <div id="posts" style="display: none;" class="div-tab">
+                <h4>Your posts:</h4>
+                <ul data-bind="foreach: ViewModelsKO.EditableBlogViewModel.blogPosts" class="CategoryList">
+                    <li>
+                        <input class="hidden-postid" type="hidden" data-bind="value: Id" />
+                        <button class="glyph-btn" onclick="PostCRUD.EnablePostEditing($(this));" data-toggle="editpost"><i class="glyphicon glyphicon-pencil"></i>...</button>
+                        <button class="glyph-btn" onclick="PostCRUD.DeletePost($(this));"><i class="glyphicon glyphicon-trash"></i></button>
+                        <span data-bind="text: PostTitle"></span>
+                    </li>
+                </ul>
+                <a onclick="PostCRUD.EnablePostCreation($(this));" data-toggle="editpost" style="cursor: pointer;">To post creation...</a>
+            </div>
+
+            <div id="categories" style="display: none;" class="div-tab" >
+                <h4>Your categories:</h4>
+                <ul data-bind="foreach: ViewModelsKO.EditableBlogViewModel.blogCategories" class="CategoryList">
+                    <li>
+                        <input class="hidden-categoryid" type="hidden" data-bind="value: Id" />
+                        <button class="glyph-btn" onclick="CategoryCRUD.EnableCategoryEditing($(this));"><i class="glyphicon glyphicon-pencil"></i>...</button>
+                        <button class="glyph-btn" onclick="CategoryCRUD.DeleteCategory($(this));"><i class="glyphicon glyphicon-trash"></i></button>
+                        <span class="span-categoryname" data-bind="text: CategoryName"></span>
+                        <input class="text-categoryedit" type="text" style="display: none; width: 100px;" data-bind="value: CategoryName, event: {  change: function(data, event) {CustomValidation.ValidateCategoryEdit(event)} }"/>
+                        <button class="glyph-btn btn-save" style="display: none;" onclick="CategoryCRUD.SaveCategoryChanges($(this));">Save</button>
+                        <span class="category-validation-message validation-message">Category Name can't be empty!</span>
+                    </li>
+                </ul><br/>
+                     <p style="margin-bottom: 0; padding-bottom: 5px; padding-top: 5px;">
+                         <b> <label>Category name:</label> </b>
+                         <input id="textCategoryName" type="text" class="textboxPostTitle" style="width: 250px;" />
+                         <button id="ButtonCreateCategory" onclick="CategoryCRUD.CreateCategory();" class="buttonOnWhitePanel">Create</button>
+                         <span id="spanCategoryErrorMessage" class="validation-message">Category Name can't be empty!</span>
+                     </p>
+               
+                
+            </div>
+            
+            <div id="editpost" class="div-tab" style="display: none;">
+                <input id="hiddenCreatingPostId" type="hidden" />
+                <p style="margin-bottom: 0; padding-bottom: 5px; padding-top: 5px;">
+                    <b> <label>Input post title:</label> </b>
+                    <input id="textPostTitle" type="text" class="textboxPostTitle" />
+                    <span id="postTitleValidationMessage" class="validation-message">Post Title can't be empty!</span>
+                </p>
+                <br />
+                <b> <label></label>Input post content: </b><span id="contentValidationMessage" class="validation-message">Post Content can't be empty!</span><br />
+                <textarea id="textPostContent" class="divBodyHolder preBodyHolder"></textarea>
+                <br />
+                <div id="CategoryCheckBoxPanel" class="CategoryCheckBoxPanel" data-bind="foreach: blogCategories">
+
+                    <label>
+                        <input class="categoryCheckBox" type="checkbox" data-bind="value: Id" />
+                        <span data-bind=" text: CategoryName"></span>
+                    </label>
+
+                </div>
+
+                <button id="buttonSavePostChanges" class="buttonOnWhitePanel" onclick="PostCRUD.CreateUpdatePost($(this));" style="display: none;">Save changes</button>
+                <button id="buttonCreatePost" class="buttonOnWhitePanel" onclick="PostCRUD.CreateUpdatePost($(this));" style="display: none;">Create</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>

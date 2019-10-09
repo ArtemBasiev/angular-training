@@ -1,0 +1,7 @@
+﻿
+@model List<bizapps_test.MVC.Models.CommentViewModel>
+
+    @foreach (var modelItem in Model)
+     {
+        Html.RenderAction("Comment", "Comment", modelItem);
+     }

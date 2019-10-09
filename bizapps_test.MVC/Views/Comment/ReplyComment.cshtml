@@ -1,0 +1,25 @@
+﻿
+@model bizapps_test.MVC.Models.CommentViewModel
+
+@{
+    using (Ajax.BeginForm("CreateComment", "Comment", new AjaxOptions {UpdateTargetId = "ajaxcommentpanel"}))
+    {
+     <div id="divCommentReply" class="divcommentreply">
+          @Html.EditorFor(comment => comment.CommentText, new { htmlAttributes = new { @class = "commentarea", placeholder = "Join the discussion..." } })
+          <p class="comment-validator-container">
+              @Html.ValidationMessageFor(comment => comment.CommentText, "", new { @class = "comment-validator" })
+          </p>
+          <input type="submit" id="ButtonReply" value="Post as @Html.DisplayFor(comment=>comment.ActiveUser)" class="button-save-edit" />
+          <p class="panel-edit">
+              <label id="LabelCommentUserReply" class="commentarea-message">@Html.DisplayFor(comment => comment.ActiveUser)</label>
+              <button id="ButtonCancelReplying" type="button" onclick="displayReplyComment($(this));" class="button-cancel">Cancel</button>
+          </p>
+          @Html.HiddenFor(comment => comment.Id)
+          @Html.HiddenFor(comment => comment.PostId)
+          @Html.HiddenFor(comment => comment.ParentId)
+         @Html.HiddenFor(comment => comment.ActiveUser)
+     </div>
+    }
+
+}
+

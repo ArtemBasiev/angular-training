@@ -1,0 +1,18 @@
+﻿@using bizapps_test.MVC.Models
+@model  List<CategoryViewModel>
+
+<div class="panel panel-default sidebar" style="text-align: left;">
+<h4>CATEGORIES</h4>
+    <div id="categorycontainer" class="sidebarlistcontainer">
+        <ul id="CategoryList" class="SideBarList">
+            <li>  @Html.ActionLink("All categories", "Index", "Home")</li>
+            <li>@Html.ActionLink("Without category", "Index", "Home", new { categoryId = "withoutcategory" }, null)</li>
+            @foreach (CategoryViewModel viewItem in Model)
+            {
+                <li>@Html.ActionLink(viewItem.CategoryName, "Index", "Home", new { categoryId = viewItem.Id }, null)</li>
+            }
+
+
+        </ul>
+    </div>
+</div>

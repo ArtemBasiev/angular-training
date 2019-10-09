@@ -1,0 +1,43 @@
+﻿
+@model List<bizapps_test.MVC.Models.CommentViewModel>
+
+
+
+@if (Model.Count > 0)
+{
+<div class="hideshowpair">
+    <button type="button" style="display: none;" class="btn btn-link button-showanswers" onclick="DisplayChildList($(this));">Show answers <i class="glyphicon glyphicon-triangle-bottom" style="font-size: 10px;"></i></button>
+    @if (!ViewBag.HaveMoreThanFourLevels)
+    {
+        <div class="hideshowtriggered commentchild-container">
+
+
+            @foreach (var modelItem in Model)
+            {
+                Html.RenderAction("Comment", "Comment", modelItem);
+            }
+
+        </div>
+    }
+    else
+    {
+        <div class="hideshowtriggered commentchild-container-withoutmargin">
+
+
+            @foreach (var modelItem in Model)
+            {
+                Html.RenderAction("Comment", "Comment", modelItem);
+            }
+
+        </div>
+    }
+
+    @if (Model.Count > 3)
+    {
+        <button type="button" class="btn btn-link button-showanswers" onclick="HideChildList($(this));">Hide <i class="glyphicon glyphicon-triangle-top" style="font-size: 10px;"></i></button>
+    }
+
+</div>
+  
+}
+

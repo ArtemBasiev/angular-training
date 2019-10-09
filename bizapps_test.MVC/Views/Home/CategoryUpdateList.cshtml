@@ -1,0 +1,14 @@
+﻿@using bizapps_test.MVC.Models
+@model  List<CategoryViewModel>
+
+<div  style="text-align: left;">
+    <h4>CATEGORIES</h4>
+    <div id="categorycontainer">
+        <ul id="CategoryList" class="CategoryList">
+            @foreach (CategoryViewModel viewItem in Model)
+            {
+                <li>@Html.ActionLink(viewItem.CategoryName, "UpdateDeleteCategory", "Admin", viewItem, null)</li>
+            }
+        </ul>
+    </div>
+</div>

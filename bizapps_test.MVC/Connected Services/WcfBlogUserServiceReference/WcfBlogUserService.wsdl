@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfBlogUserService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/WcfBlogUserService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/WcfBlogUserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/WcfBlogUserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/bizapps_test.SL.Wcf_Services.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWcfBlogUserService_CreateBlogUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlogUser" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_CreateBlogUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlogUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_UpdateBlogUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBlogUser" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_UpdateBlogUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBlogUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_DeleteBlogUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBlogUser" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_DeleteBlogUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBlogUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetBlogUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogUserById" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetBlogUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetBlogUserByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogUserByName" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetBlogUserByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogUserByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetBlogUserNameAndPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogUserNameAndPassword" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetBlogUserNameAndPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogUserNameAndPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetAdminPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminPermission" />
+  </wsdl:message>
+  <wsdl:message name="IWcfBlogUserService_GetAdminPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminPermissionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWcfBlogUserService">
+    <wsdl:operation name="CreateBlogUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfBlogUserService/CreateBlogUser" message="tns:IWcfBlogUserService_CreateBlogUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfBlogUserService/CreateBlogUserResponse" message="tns:IWcfBlogUserService_CreateBlogUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBlogUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfBlogUserService/UpdateBlogUser" message="tns:IWcfBlogUserService_UpdateBlogUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfBlogUserService/UpdateBlogUserResponse" message="tns:IWcfBlogUserService_UpdateBlogUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlogUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfBlogUserService/DeleteBlogUser" message="tns:IWcfBlogUserService_DeleteBlogUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfBlogUserService/DeleteBlogUserResponse" message="tns:IWcfBlogUserService_DeleteBlogUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfBlogUserService/ChangePassword" message="tns:IWcfBlogUserService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfBlogUserService/ChangePasswordResponse" message="tns:IWcfBlogUserService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetAllUsers" message="tns:IWcfBlogUserService_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetAllUsersResponse" message="tns:IWcfBlogUserService_GetAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogUserById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetBlogUserById" message="tns:IWcfBlogUserService_GetBlogUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetBlogUserByIdResponse" message="tns:IWcfBlogUserService_GetBlogUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogUserByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetBlogUserByName" message="tns:IWcfBlogUserService_GetBlogUserByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetBlogUserByNameResponse" message="tns:IWcfBlogUserService_GetBlogUserByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogUserNameAndPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetBlogUserNameAndPassword" message="tns:IWcfBlogUserService_GetBlogUserNameAndPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetBlogUserNameAndPasswordResponse" message="tns:IWcfBlogUserService_GetBlogUserNameAndPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetAdminPermission" message="tns:IWcfBlogUserService_GetAdminPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfBlogUserService/GetAdminPermissionResponse" message="tns:IWcfBlogUserService_GetAdminPermission_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWcfBlogUserService" type="tns:IWcfBlogUserService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateBlogUser">
+      <soap:operation soapAction="http://tempuri.org/IWcfBlogUserService/CreateBlogUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBlogUser">
+      <soap:operation soapAction="http://tempuri.org/IWcfBlogUserService/UpdateBlogUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlogUser">
+      <soap:operation soapAction="http://tempuri.org/IWcfBlogUserService/DeleteBlogUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IWcfBlogUserService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IWcfBlogUserService/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogUserById">
+      <soap:operation soapAction="http://tempuri.org/IWcfBlogUserService/GetBlogUserById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogUserByName">
+      <soap:operation soapAction="http://tempuri.org/IWcfBlogUserService/GetBlogUserByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogUserNameAndPassword">
+      <soap:operation soapAction="http://tempuri.org/IWcfBlogUserService/GetBlogUserNameAndPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminPermission">
+      <soap:operation soapAction="http://tempuri.org/IWcfBlogUserService/GetAdminPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfBlogUserService">
+    <wsdl:port name="BasicHttpBinding_IWcfBlogUserService" binding="tns:BasicHttpBinding_IWcfBlogUserService">
+      <soap:address location="http://localhost:8080/WcfBlogUserService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

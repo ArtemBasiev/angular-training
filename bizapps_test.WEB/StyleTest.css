@@ -1,0 +1,74 @@
+﻿body {
+}
+
+#form1 {
+    width:1600px;
+}
+#headdiv {
+    width: 1600px;
+    height: 50px;
+    background-color: #00ff90;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:auto;
+    margin-bottom:40px;
+    align-content:space-between;
+
+}
+
+#headlabel {
+    font-size: 30px;
+    margin-left:650px;
+   font-style:oblique;
+    margin-top:20px;
+   
+}
+
+#div_list_kat{
+    width: 20%;
+    height: 200px;
+    margin-right:50px;
+   
+}
+
+#div_cr_kat {
+     width: 50%;
+    height: 400px;
+    margin-left:50px;
+  
+    
+}
+
+#div_union {
+     width: 100%;
+}
+
+#Label2 {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:auto;
+    font-size:25px;
+    
+  
+   
+}
+
+
+#Text1 {
+    margin-left:auto;
+    margin-right:auto;
+    width:190px;
+}
+
+#cr_kat {
+    margin-left:auto;
+    margin-right:auto;
+    width:100px;
+    font-size:15px;
+}
+
+#Label1 {
+    margin-left:auto;
+    margin-right:auto;
+    font-size:25px;
+}

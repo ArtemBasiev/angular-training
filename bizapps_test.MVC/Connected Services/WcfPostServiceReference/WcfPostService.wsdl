@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfPostService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/WcfPostService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/WcfPostService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/WcfPostService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/bizapps_test.SL.Wcf_Services.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWcfPostService_CreatePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePost" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_CreatePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_UpdatePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePost" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_UpdatePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_DeletePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePost" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_DeletePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetUserPosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPosts" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetUserPosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetUserPostsByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPostsByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetUserPostsByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPostsByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetPostsByUserNameWithoutCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsByUserNameWithoutCategory" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetPostsByUserNameWithoutCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsByUserNameWithoutCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetPostsByUserNameAndCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsByUserNameAndCategory" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetPostsByUserNameAndCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsByUserNameAndCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPost" />
+  </wsdl:message>
+  <wsdl:message name="IWcfPostService_GetPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWcfPostService">
+    <wsdl:operation name="CreatePost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfPostService/CreatePost" message="tns:IWcfPostService_CreatePost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfPostService/CreatePostResponse" message="tns:IWcfPostService_CreatePost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfPostService/UpdatePost" message="tns:IWcfPostService_UpdatePost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfPostService/UpdatePostResponse" message="tns:IWcfPostService_UpdatePost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfPostService/DeletePost" message="tns:IWcfPostService_DeletePost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfPostService/DeletePostResponse" message="tns:IWcfPostService_DeletePost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfPostService/GetUserPosts" message="tns:IWcfPostService_GetUserPosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfPostService/GetUserPostsResponse" message="tns:IWcfPostService_GetUserPosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPostsByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfPostService/GetUserPostsByUserName" message="tns:IWcfPostService_GetUserPostsByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfPostService/GetUserPostsByUserNameResponse" message="tns:IWcfPostService_GetUserPostsByUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostsByUserNameWithoutCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfPostService/GetPostsByUserNameWithoutCategory" message="tns:IWcfPostService_GetPostsByUserNameWithoutCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfPostService/GetPostsByUserNameWithoutCategoryResponse" message="tns:IWcfPostService_GetPostsByUserNameWithoutCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostsByUserNameAndCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfPostService/GetPostsByUserNameAndCategory" message="tns:IWcfPostService_GetPostsByUserNameAndCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfPostService/GetPostsByUserNameAndCategoryResponse" message="tns:IWcfPostService_GetPostsByUserNameAndCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfPostService/GetPost" message="tns:IWcfPostService_GetPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfPostService/GetPostResponse" message="tns:IWcfPostService_GetPost_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWcfPostService" type="tns:IWcfPostService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePost">
+      <soap:operation soapAction="http://tempuri.org/IWcfPostService/CreatePost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePost">
+      <soap:operation soapAction="http://tempuri.org/IWcfPostService/UpdatePost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePost">
+      <soap:operation soapAction="http://tempuri.org/IWcfPostService/DeletePost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPosts">
+      <soap:operation soapAction="http://tempuri.org/IWcfPostService/GetUserPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPostsByUserName">
+      <soap:operation soapAction="http://tempuri.org/IWcfPostService/GetUserPostsByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostsByUserNameWithoutCategory">
+      <soap:operation soapAction="http://tempuri.org/IWcfPostService/GetPostsByUserNameWithoutCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostsByUserNameAndCategory">
+      <soap:operation soapAction="http://tempuri.org/IWcfPostService/GetPostsByUserNameAndCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPost">
+      <soap:operation soapAction="http://tempuri.org/IWcfPostService/GetPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfPostService">
+    <wsdl:port name="BasicHttpBinding_IWcfPostService" binding="tns:BasicHttpBinding_IWcfPostService">
+      <soap:address location="http://localhost:8080/WcfPostService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

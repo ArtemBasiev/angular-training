@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c562454d-5cb3-4810-a491-24beec108a49" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/WcfCategoryService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfCategoryService.xsd" MetadataType="Schema" ID="c75f747c-a17b-40a3-90ac-2b2ab4b780d4" SourceId="1" SourceUrl="http://localhost:8080/WcfCategoryService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WcfCategoryService.wsdl" MetadataType="Wsdl" ID="0d33ec77-fcc7-4fe9-b997-a75971f1d1d8" SourceId="1" SourceUrl="http://localhost:8080/WcfCategoryService.svc?wsdl" />
+    <MetadataFile FileName="WcfCategoryService1.xsd" MetadataType="Schema" ID="d45e70c6-5849-4f30-b194-f4a1a11bcd2b" SourceId="1" SourceUrl="http://localhost:8080/WcfCategoryService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WcfCategoryService.disco" MetadataType="Disco" ID="e2c75331-05ed-4e93-8363-069d4927800d" SourceId="1" SourceUrl="http://localhost:8080/WcfCategoryService.svc?disco" />
+    <MetadataFile FileName="WcfCategoryService2.xsd" MetadataType="Schema" ID="4966a4c5-29ef-4436-b9d5-bea7907a1b8a" SourceId="1" SourceUrl="http://localhost:8080/WcfCategoryService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

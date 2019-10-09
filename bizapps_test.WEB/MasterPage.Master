@@ -1,0 +1,184 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="bizapps_test.WEB.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />  
+    <link href="fonts/stylesheet.css" rel="stylesheet" />
+   <script>
+        function GetUrlParam(name) {
+           var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+           if (results == null) {
+               return null;
+           } else {
+               return decodeURI(results[1]) || 0;
+           }
+       };
+       
+       function ActivateCategoryItem(categoryList) {
+           $.urlParam = GetUrlParam("category");
+           if ($(categoryList).find("li").value==$.urlParam) {
+               $(categoryList).find("li").css("color: black;");
+           }
+       };
+
+
+   </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <nav class="navbar  header"  >
+        
+         <div id ="headdiv" class="container ">
+     
+             <div class="row">
+                 <div class="col-lg-3">
+                     <a class="navbar-brand brand" href="MainPage.aspx">itBL<i class="glyphicon glyphicon-cog"> </i>GER</a>
+                 </div>
+                 <div class="col-lg-9">
+                 <ul class ="navbar navbar-nav navbar-right list-inline" id="navbarlist" runat="server">
+                     <li ><asp:HyperLink runat="server" NavigateUrl="~/MainPage.aspx" Text="Main page"></asp:HyperLink></li>
+                     <li >Category</li>
+                     <li >About</li>
+                     <li >Contacts</li>
+                 </ul>
+                 </div>
+             </div>
+
+            
+                
+         </div>
+    </nav>
+        
+        <div class="container" id="wrap" style=" height: auto;" >
+                      <form runat="server" role="form" >
+                          <div class="row" style="height: auto;  margin-bottom: 60px;">
+                          <div class="col-lg-9" style="padding-right: 30px; padding-left: 0;" >
+                              <asp:ContentPlaceHolder ID="ContentPlaceHolder1"   runat="server">
+                              </asp:ContentPlaceHolder>
+                            
+                          </div>  
+                          <div class="col-lg-3 sidebarcontainer pinned">
+                              <asp:ContentPlaceHolder ID="ContentPlaceHolder2"   runat="server">
+                              </asp:ContentPlaceHolder>
+                             
+                              <div class="panel panel-default sidebar" style="text-align: left;" >
+                                  <h4 >CATEGORIES</h4>
+                                  <div id="categorycontainer" class="sidebarlistcontainer">
+                                      <asp:BulletedList ID="CategoryList"  CssClass="SideBarList" DisplayMode="LinkButton" OnClick="CategoryList_OnClick" runat="server">
+                                          <asp:ListItem  Text="All categories"   Value="allcategories"/> 
+                                          <asp:ListItem Text="Without category"   Value="withoutcategory"/> 
+                                      </asp:BulletedList>
+                                  </div>
+                                
+                              </div>
+                              
+                                 <asp:Login ID="AuthForm" VisibleWhenLoggedIn="False"  OnLoggedIn="AuthForm_OnLoggedIn"  OnAuthenticate="AuthForm_OnAuthenticate" Visible="False" runat="server">
+                                            <LayoutTemplate>
+                                                <div class="panel panel-default sidebar" id="loginform">
+                                                <h4>Log In</h4>
+                                                <asp:TextBox ID="UserName" CssClass="loginformtextbox" placeholder="Login" runat="server"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="UserNameRequired"
+                                                                                ControlToValidate="UserName"
+                                                                                ErrorMessage="*"
+                                                                                ForeColor="Red"
+                                                                                ValidationGroup="AuthForm"
+                                                                                runat="server"/>
+                                                    <asp:RegularExpressionValidator ID="UserNameValidator" 
+                                                                                    ControlToValidate="UserName"
+                                                                                    ValidationExpression="[\w| ]*"
+                                                                                    ErrorMessage="Incorrect user name"
+                                                                                    ValidationGroup="AuthForm"
+                                                                                    runat="server"/>
+                                                <asp:TextBox ID="Password" CssClass="loginformtextbox" placeholder="Password" TextMode="Password" runat="server"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="PasswordRequired" 
+                                                                                ControlToValidate="Password"
+                                                                                ErrorMessage="*"
+                                                                                ForeColor="Red"
+                                                                                ValidationGroup="AuthForm"
+                                                                                runat="server"/>
+                                                    <asp:RegularExpressionValidator ID="PasswordValidator" 
+                                                                                    ControlToValidate="Password"
+                                                                                    ValidationExpression='[\w| !"@§$%&/()=\-?\*]*'
+                                                                                    ErrorMessage="Incorrect password"
+                                                                                    ValidationGroup="AuthForm"
+                                                                                    runat="server"/> <br/>
+                                                 <asp:Button ID="Login" CssClass="Login" CommandName="Login" Text="LogIn" runat="server"/>
+                                                  <a href="CreateUser.aspx">Sign In</a> 
+                                                </div>
+                                            </LayoutTemplate>
+                                 </asp:Login>
+                              
+                              <div class="panel panel-default sidebar" Visible="False" id="adminpanel" style="text-align: left;" runat="server" >
+                                  <h4 >ADMINISTRATION PANEL</h4>
+                                  <div class="sidebarlistcontainer">
+                                      <ul class="SideBarList">
+                                          <il> <a href="PostCreation.aspx"> Post creation </a></il> <br/>
+                                          <il> <a href="CategoryCreation.aspx"> Category creation</a></il>
+                                      </ul>
+                                  </div>
+                              </div>
+
+                              <div class="panel panel-default sidebar" id="LogoutPanel" Visible="False" style="text-align: left;" runat="server" >
+                                  <asp:Label ID="LabelUserName" runat="server"/>
+                                  <p style="margin-top: 20px; margin-left: 10px;">
+                                      <button id="ButtonLogOut" CausesValidation="False" style="margin-right: 5px;" OnServerClick="ButtonLogOut_OnServerClick" runat="server"> Log out</button>
+                                      <a href="ChangePassword.aspx">Change password</a> 
+                                  </p>
+                                
+                              </div>
+
+                          </div>
+                          </div>
+
+                      
+                          
+
+                   </form>     
+      
+        </div>
+
+      
+<footer   >
+          
+    <div class="container">
+                 
+        <span id="footer-text"> 2019  All rights reserved</span>
+               
+    </div>
+
+</footer>
+
+       
+
+
+
+          
+   
+         
+          
+        
+       
+   
+    <script src="Scripts/jquery-1.9.0.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery.pin.js"></script>
+<script>
+    $(".pinned").pin({
+        containerSelector: ".container"
+    })
+</script>
+  <%-- <script>
+       function CategoryList_OnClick() {
+           document.getElementById("CategoryList").CategoryList.toggle('activeitem');
+       }
+   </script>--%>
+
+
+</body>
+
+</html>

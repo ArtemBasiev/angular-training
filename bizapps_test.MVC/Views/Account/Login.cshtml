@@ -1,0 +1,30 @@
+﻿@model bizapps_test.MVC.Models.BlogUserViewModel
+
+@{
+    AjaxOptions ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "loginform"
+    };
+}
+@{Html.EnableClientValidation();}
+
+@using (Ajax.BeginForm("Login", "Account", ajaxOptions))
+{
+    <div class="panel panel-default sidebar" id="loginform">
+        <h4>Log In</h4>
+        <span style="float: left; margin-left: 20px;">Login</span><br/>
+        <div class="loginform-editor-field">
+            @Html.EditorFor(model => model.UserName)<br/>
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+        <span style="float: left; margin-left: 20px;">Password</span><br/>
+        <div class="loginform-editor-field">
+            @Html.EditorFor(model => model.UserName)<br/>
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+        <button id="Login" value="Login" type="submit" class="Login">Log In</button>
+        <a href="#">Sign In</a>
+    </div>
+}
+
+

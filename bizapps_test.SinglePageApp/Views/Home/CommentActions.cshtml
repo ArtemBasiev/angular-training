@@ -1,0 +1,22 @@
+﻿
+<div class="divCommentEdit">
+    <textarea class="commentarea areaEditCommentText" , onchange="CustomValidation.ValidateCommentEditing($(this));" placeholder="Edit comment..."></textarea>
+    <p class="comment-validator-container commentEditingValidator">
+        <span style="float: left;" class="glyphicon glyphicon-warning-sign"> </span> 
+        <span class="comment-validator" style="float: left; margin-left: 10px;">Comment Text is not set</span>
+        <button class="btn-closevalidator" onclick="InterfaceActions.HideMainCommentValidator($(this));" type="button">
+            <i class="glyphicon glyphicon-remove"></i>
+        </button>  
+    </p>
+    <button class="button-save-edit" onclick="CommentCRUD.SaveCommentChanges($(this));">Save changes</button>
+    <p class="panel-edit">
+        <label style="margin: 0;" class="labelCommentUser commentarea-message"></label>   
+        <button onclick="CommentCRUD.CancelCommentEditing($(this));" class="ButtonCancelEdit button-cancel">Cancel</button>
+    </p>
+</div>
+
+<i style="font-size: 10px; color: #c2c6cc;"> • </i>
+<button class="button-open-modal" onclick="CommentCRUD.EnableCommentEditing($(this));">Edit</button>
+<i style="font-size: 10px; color: #c2c6cc;"> • </i>
+<button class="button-open-modal" onclick="CommentCRUD.DeleteComment($(this));">Delete</button>
+<i style="font-size: 10px; color: #c2c6cc;"> • </i>

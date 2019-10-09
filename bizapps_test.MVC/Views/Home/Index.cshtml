@@ -1,0 +1,64 @@
+﻿@using bizapps_test.MVC.Models
+@model PostPagedListViewModel
+@{
+    int buttonCount = Model.PageButtonCount;
+    int selectedPage = Model.SelectedPage;
+ }
+
+
+@{
+    ViewBag.Title = "Main page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="blog-container">
+   
+        @for(int i=0; i<Model.PostList.Count; i++)
+    {
+    <div class=" blogpanel">
+        <img src=@Html.DisplayFor(modelItem => Model.PostList[i].PostImage) class="postimage">
+        <h2> @Html.DisplayFor(modelItem => Model.PostList[i].Title) </h2>
+        <p>  @Html.DisplayFor(modelItem => Model.PostList[i].CreationDate) </p>
+            @Html.ActionLink("Read More", "Post", "Admin", Model.PostList[i], null)
+ 
+      
+        @*<button id="ButtonShowMore" class="ButtonShowMore">
+            Read More
+            <i class="glyphicon  glyphicon-arrow-right"></i>
+        </button>*@
+
+        <br />
+        @if (Model.PostList[i].Categories.Length > 0)
+        {
+        <p>
+            Categories:
+            @foreach (var postCategory in Model.PostList[i].Categories)
+            {
+               @Html.ActionLink(postCategory.CategoryName, "Index","Home", new { categoryId = postCategory.Id }, null)
+               @Html.Raw("    ")
+            }
+        </p>
+        }
+       
+    </div>
+    }
+    @if (buttonCount>1)
+    {
+        <div class="pager">
+            @for (int i = 1; i <= buttonCount; i++)
+            {
+                if (i!=selectedPage)
+                {
+                    @Html.ActionLink(i.ToString(), "Index", "Home", new { page = i }, null);
+                    
+                }
+                else
+                {
+                    <span><b>@i</b></span>
+                }          
+            }
+        </div>
+    }
+   
+   
+</div>

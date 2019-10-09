@@ -1,0 +1,23 @@
+﻿@model bizapps_test.MVC.Models.BlogUserViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    using (Html.BeginForm("SignIn", "Account", FormMethod.Post))
+    {
+        <div class="PostViewContainer">
+            <h2> Sign In</h2>
+            @Html.EditorFor(user => user.UserName, new { htmlAttributes = new { @class = "textboxPostTitle", placeholder = "Login..." } })
+            @Html.ValidationMessageFor(user => user.UserName)<br/><br/>
+
+            @Html.EditorFor(user => user.UserPassword, new { htmlAttributes = new { @class = "textboxPostTitle", placeholder = "Password..." } })
+            @Html.ValidationMessageFor(user => user.UserPassword)<br/><br/>
+
+            <input type="submit" id="ButtonSignIn" value="Sign In" class="buttonOnWhitePanel"  />
+
+        </div>
+    }
+}
+

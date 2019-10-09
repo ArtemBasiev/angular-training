@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WcfCategoryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/WcfCategoryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/WcfCategoryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/WcfCategoryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/bizapps_test.SL.Wcf_Services.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWcfCategoryService_CreateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_CreateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_GetPostCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostCategories" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_GetPostCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_GetBlogCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogCategories" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_GetBlogCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_GetCategoryById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryById" />
+  </wsdl:message>
+  <wsdl:message name="IWcfCategoryService_GetCategoryById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWcfCategoryService">
+    <wsdl:operation name="CreateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCategoryService/CreateCategory" message="tns:IWcfCategoryService_CreateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCategoryService/CreateCategoryResponse" message="tns:IWcfCategoryService_CreateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCategoryService/UpdateCategory" message="tns:IWcfCategoryService_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCategoryService/UpdateCategoryResponse" message="tns:IWcfCategoryService_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCategoryService/DeleteCategory" message="tns:IWcfCategoryService_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCategoryService/DeleteCategoryResponse" message="tns:IWcfCategoryService_DeleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCategoryService/GetAllCategories" message="tns:IWcfCategoryService_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCategoryService/GetAllCategoriesResponse" message="tns:IWcfCategoryService_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCategoryService/GetPostCategories" message="tns:IWcfCategoryService_GetPostCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCategoryService/GetPostCategoriesResponse" message="tns:IWcfCategoryService_GetPostCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCategoryService/GetBlogCategories" message="tns:IWcfCategoryService_GetBlogCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCategoryService/GetBlogCategoriesResponse" message="tns:IWcfCategoryService_GetBlogCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfCategoryService/GetCategoryById" message="tns:IWcfCategoryService_GetCategoryById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfCategoryService/GetCategoryByIdResponse" message="tns:IWcfCategoryService_GetCategoryById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWcfCategoryService" type="tns:IWcfCategoryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateCategory">
+      <soap:operation soapAction="http://tempuri.org/IWcfCategoryService/CreateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/IWcfCategoryService/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap:operation soapAction="http://tempuri.org/IWcfCategoryService/DeleteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IWcfCategoryService/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostCategories">
+      <soap:operation soapAction="http://tempuri.org/IWcfCategoryService/GetPostCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogCategories">
+      <soap:operation soapAction="http://tempuri.org/IWcfCategoryService/GetBlogCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryById">
+      <soap:operation soapAction="http://tempuri.org/IWcfCategoryService/GetCategoryById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WcfCategoryService">
+    <wsdl:port name="BasicHttpBinding_IWcfCategoryService" binding="tns:BasicHttpBinding_IWcfCategoryService">
+      <soap:address location="http://localhost:8080/WcfCategoryService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
