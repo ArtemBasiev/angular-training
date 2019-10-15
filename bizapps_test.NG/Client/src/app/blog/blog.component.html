@@ -1,0 +1,43 @@
+<div class="row" style="height: auto; margin-bottom: 60px;">
+    <div class="col-lg-9" style="padding-right: 30px; padding-left: 0;">
+        <div id="divContent" class="blog-container">
+            <div id="divPostList">
+                <div *ngFor="let post of filteredPosts | paginate: { itemsPerPage: pageSize, currentPage: pageNumber }">
+                    <div class=" blogpanel">
+                        <img src="/Images/Default.jpeg" class="postimage">
+                        <h2>{{post.PostTitle}}</h2>
+                        <p> <span>{{post.CreationDate}}</span> </p>
+
+                        <a class="ButtonShowMore" routerLink = "/post/{{post.Id}}">
+                            Read More
+                            <i class="glyphicon  glyphicon-arrow-right"></i>
+                        </a>
+
+                        <br />
+                        <ul class="list-inline" style="font-style: italic;">
+                            <li *ngFor="let category of post.PostCategories">
+                                <span [class.active-category]="categoryId==category.Id" >{{category.CategoryName}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pager">
+                        <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-lg-3 sidebarcontainer">
+        <div class="panel panel-default sidebar" style="text-align: left;">
+            <h4>CATEGORIES</h4>
+            <div id="categorycontainer" class="sidebarlistcontainer blogBindable">
+                <ul class="SideBarList" *ngFor="let blogCategory of blog.BlogCategories">
+                    <li> <button [class.btn-active] = "categoryId==blogCategory.Id"  (click)="filterByCategory(blogCategory.Id)" type="button">{{blogCategory.CategoryName}}</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

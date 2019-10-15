@@ -6,9 +6,9 @@ var AuthorizationModule = {};
 
     var tokenKey = 'tokenInfo';
 
-    var authorizationServerUrl = "http://localhost:49401/token";
+    var authorizationServerUrl = "http://webapiblog/token";
 
-    var registrationUrl = "http://localhost:49401/api/user/createuser";
+    var registrationUrl = "http://webapiblog/api/user/createuser";
 
     function authorize(login, password) {
 

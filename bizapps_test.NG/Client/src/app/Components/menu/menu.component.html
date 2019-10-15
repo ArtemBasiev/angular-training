@@ -1,0 +1,55 @@
+<nav class="navbar navbar-fixed-top header">
+
+    <div id="headdiv" class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="toggle-btn navbar-left" onclick="InterfaceActions.OpenMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span id="menu-username" class="navbar-left"></span>
+            </div>
+
+            <div class="col-lg-9">
+                <a class="navbar-brand navbar-right brand" href="#"><span id="blogtitle"></span></a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="sidebar">
+
+
+    <div class="panel panel-default sidebar" id="loginform">
+        <h4>Log In</h4>
+        <span style="float: left; margin-left: 20px;">Login</span>
+        <span id="sidebarLoginValMessage" class="validation-message">Input login</span>
+        <br />
+        <div class="loginform-editor-field">
+            <input id="username" type="text" class="textbox-loginform" /><br />
+        </div>
+        <span style="float: left; margin-left: 20px;">Password</span>
+        <span id="sidebarPasswordValMessage" class="validation-message">Input password</span>
+        <br />
+        <div class="loginform-editor-field">
+            <input id="password" type="password" class="textbox-loginform" /><br />
+        </div>
+        <button id="logIn" value="Login" type="button" class="Login">Log In</button>
+        <i> • </i>
+        <a onclick="window.location.hash = 'reg';" style="cursor: pointer;">Registration</a>
+    </div>
+
+    <div class="panel panel-default sidebar" id="logoutpanel" style="text-align: left; display: none">
+        <ul>
+            <li id="li-createblog"><button onclick="window.location.hash = 'edit';">Blog</button></li>
+        </ul>
+        <input id="userid" type="hidden" />
+        <p style="margin-top: 20px; margin-left: 10px;">
+            <i> • </i>
+            <button id="logOut">Sign Out</button>
+            <i> • </i>
+        </p>
+    </div>
+</div>

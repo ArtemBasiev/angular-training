@@ -1,0 +1,5 @@
+{
+    "apiUrl" :"http://webapiblog/",
+    "getPostByIdUrl": "post/getpost/",
+    "getBlogByIdUrl": "blog/getblogbyid/"
+  }

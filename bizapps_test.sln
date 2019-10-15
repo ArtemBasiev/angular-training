@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bizapps_test.Domain", "biza
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bizapps_test.SinglePageApp", "bizapps_test.SinglePageApp\bizapps_test.SinglePageApp.csproj", "{2AEF72C5-2315-4A6E-8084-70F76A654234}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bizapps_test.NG", "bizapps_test.NG\bizapps_test.NG.csproj", "{2FE83439-432C-4180-90A3-A3FABFE2DEBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +104,10 @@ Global
 		{2AEF72C5-2315-4A6E-8084-70F76A654234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AEF72C5-2315-4A6E-8084-70F76A654234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AEF72C5-2315-4A6E-8084-70F76A654234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FE83439-432C-4180-90A3-A3FABFE2DEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE83439-432C-4180-90A3-A3FABFE2DEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE83439-432C-4180-90A3-A3FABFE2DEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE83439-432C-4180-90A3-A3FABFE2DEBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,62 +125,9 @@ Global
 		{02B79EA4-38F7-49C2-BBAC-605CCB9C95D5} = {30277B70-4DBA-434C-9916-0AAB269CA3A2}
 		{A93F3A83-3D4B-4974-915A-691F7AF6288C} = {4B609D71-7D31-4B5B-8D78-D71F8722ADCF}
 		{2AEF72C5-2315-4A6E-8084-70F76A654234} = {30277B70-4DBA-434C-9916-0AAB269CA3A2}
+		{2FE83439-432C-4180-90A3-A3FABFE2DEBC} = {30277B70-4DBA-434C-9916-0AAB269CA3A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80911503-B3BF-4A0C-B1E8-FECDCFFEE053}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 13
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.biz-apps.ru/tfs/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = bizapps_test.DAL\\bizapps_test.DAL.csproj
-		SccProjectTopLevelParentUniqueName1 = bizapps_test.sln
-		SccProjectName1 = bizapps_test.DAL
-		SccLocalPath1 = bizapps_test.DAL
-		SccProjectUniqueName2 = bizapps_test.BLL\\bizapps_test.BLL.csproj
-		SccProjectTopLevelParentUniqueName2 = bizapps_test.sln
-		SccProjectName2 = bizapps_test.BLL
-		SccLocalPath2 = bizapps_test.BLL
-		SccProjectUniqueName3 = bizapps_test.BLL.Tests\\bizapps_test.BLL.Tests.csproj
-		SccProjectTopLevelParentUniqueName3 = bizapps_test.sln
-		SccProjectName3 = bizapps_test.BLL.Tests
-		SccLocalPath3 = bizapps_test.BLL.Tests
-		SccProjectUniqueName4 = bizapps_test.MVC\\bizapps_test.MVC.csproj
-		SccProjectTopLevelParentUniqueName4 = bizapps_test.sln
-		SccProjectName4 = bizapps_test.MVC
-		SccLocalPath4 = bizapps_test.MVC
-		SccProjectUniqueName5 = bizapps_test.SL.API_Services\\bizapps_test.SL.API_Services.csproj
-		SccProjectTopLevelParentUniqueName5 = bizapps_test.sln
-		SccProjectName5 = bizapps_test.SL.API_Services
-		SccLocalPath5 = bizapps_test.SL.API_Services
-		SccProjectUniqueName6 = bizapps_test.SL.Wcf_Services\\bizapps_test.SL.Wcf_Services.csproj
-		SccProjectTopLevelParentUniqueName6 = bizapps_test.sln
-		SccProjectName6 = bizapps_test.SL.Wcf_Services
-		SccLocalPath6 = bizapps_test.SL.Wcf_Services
-		SccProjectUniqueName7 = bizapps_test.SL.ASMX_Services\\bizapps_test.SL.ASMX_Services.csproj
-		SccProjectTopLevelParentUniqueName7 = bizapps_test.sln
-		SccProjectName7 = bizapps_test.SL.ASMX_Services
-		SccLocalPath7 = bizapps_test.SL.ASMX_Services
-		SccProjectUniqueName8 = bizapps_test.SL.Wcf_Services.Tests\\bizapps_test.SL.Wcf_Services.Tests.csproj
-		SccProjectTopLevelParentUniqueName8 = bizapps_test.sln
-		SccProjectName8 = bizapps_test.SL.Wcf_Services.Tests
-		SccLocalPath8 = bizapps_test.SL.Wcf_Services.Tests
-		SccProjectUniqueName9 = bizapps_test.MVC.Tests\\bizapps_test.MVC.Tests.csproj
-		SccProjectTopLevelParentUniqueName9 = bizapps_test.sln
-		SccProjectName9 = bizapps_test.MVC.Tests
-		SccLocalPath9 = bizapps_test.MVC.Tests
-		SccProjectUniqueName10 = bizapps_test.WEB\\bizapps_test.WEB.csproj
-		SccProjectTopLevelParentUniqueName10 = bizapps_test.sln
-		SccProjectName10 = bizapps_test.WEB
-		SccLocalPath10 = bizapps_test.WEB
-		SccProjectUniqueName11 = bizapps_test.Domain\\bizapps_test.Domain.csproj
-		SccProjectTopLevelParentUniqueName11 = bizapps_test.sln
-		SccProjectName11 = bizapps_test.Domain
-		SccLocalPath11 = bizapps_test.Domain
-		SccProjectUniqueName12 = bizapps_test.SinglePageApp\\bizapps_test.SinglePageApp.csproj
-		SccProjectTopLevelParentUniqueName12 = bizapps_test.sln
-		SccProjectName12 = bizapps_test.SinglePageApp
-		SccLocalPath12 = bizapps_test.SinglePageApp
 	EndGlobalSection
 EndGlobal

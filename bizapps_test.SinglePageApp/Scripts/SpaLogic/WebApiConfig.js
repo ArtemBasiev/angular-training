@@ -3,7 +3,7 @@ var WebApiConfig = {};
 
 (function () {
 
-    var apiUrl = 'http://localhost:49401/api/';
+    var apiUrl = 'http://webapiblog/';
 
     function getBlogByIdUrl(blogId) {
         var url = apiUrl + 'blog/getblogbyid/' + blogId;

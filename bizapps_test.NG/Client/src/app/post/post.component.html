@@ -1,0 +1,16 @@
+<div class="row">
+  <div id="postView" class=" col-lg-9 PostViewContainer">
+    <input id="postId" [value]="post.Id" type="hidden" />
+    <img src="/Images/Default.jpeg" class="postimage">
+      <h2 id="PostTitle">{{post.PostTitle}}</h2>
+      <label id="labelDate" class="text-right"></label>
+    <div class="divBodyHolder" id="divBodyHolder" >{{post.PostContent}}</div>
+      Categories:
+      <ul *ngFor="let category of post.PostCategories" class="list-inline" style="font-style: italic;">
+        <li>
+          <span>{{category.CategoryName}}</span>
+        </li>
+      </ul>
+    <br/>
+  </div>
+</div>
