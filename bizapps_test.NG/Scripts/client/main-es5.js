@@ -51,7 +51,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nav class=\"navbar navbar-fixed-top header\">\n\n    <div id=\"headdiv\" class=\"container-fluid\">\n        <div class=\"row\">\n            <div class=\"col-lg-3\">\n                <div class=\"toggle-btn navbar-left\" onclick=\"InterfaceActions.OpenMenu()\">\n                    <span></span>\n                    <span></span>\n                    <span></span>\n                </div>\n                <span id=\"menu-username\" class=\"navbar-left\"></span>\n            </div>\n\n            <div class=\"col-lg-9\">\n                <a class=\"navbar-brand navbar-right brand\" href=\"#\"><span id=\"blogtitle\"></span></a>\n            </div>\n\n        </div>\n    </div>\n</nav>\n\n<div id=\"sidebar\">\n\n\n    <div class=\"panel panel-default sidebar\" id=\"loginform\">\n        <h4>Log In</h4>\n        <span style=\"float: left; margin-left: 20px;\">Login</span>\n        <span id=\"sidebarLoginValMessage\" class=\"validation-message\">Input login</span>\n        <br />\n        <div class=\"loginform-editor-field\">\n            <input id=\"username\" type=\"text\" class=\"textbox-loginform\" /><br />\n        </div>\n        <span style=\"float: left; margin-left: 20px;\">Password</span>\n        <span id=\"sidebarPasswordValMessage\" class=\"validation-message\">Input password</span>\n        <br />\n        <div class=\"loginform-editor-field\">\n            <input id=\"password\" type=\"password\" class=\"textbox-loginform\" /><br />\n        </div>\n        <button id=\"logIn\" value=\"Login\" type=\"button\" class=\"Login\">Log In</button>\n        <i> • </i>\n        <a onclick=\"window.location.hash = 'reg';\" style=\"cursor: pointer;\">Registration</a>\n    </div>\n\n    <div class=\"panel panel-default sidebar\" id=\"logoutpanel\" style=\"text-align: left; display: none\">\n        <ul>\n            <li id=\"li-createblog\"><button onclick=\"window.location.hash = 'edit';\">Blog</button></li>\n        </ul>\n        <input id=\"userid\" type=\"hidden\" />\n        <p style=\"margin-top: 20px; margin-left: 10px;\">\n            <i> • </i>\n            <button id=\"logOut\">Sign Out</button>\n            <i> • </i>\n        </p>\n    </div>\n</div>\n";
+    __webpack_exports__["default"] = "<nav class=\"navbar navbar-fixed-top header\">\n\n    <div id=\"headdiv\" class=\"container-fluid\">\n        <div class=\"row\">\n            <div class=\"col-lg-3\">\n                <div class=\"toggle-btn navbar-left\" (click)=\"toggleSideBar()\">\n                    <span></span>\n                    <span></span>\n                    <span></span>\n                </div>\n                <span id=\"menu-username\" class=\"navbar-left\"></span>\n            </div>\n\n            <div class=\"col-lg-9\">\n                <a class=\"navbar-brand navbar-right brand\" href=\"#\"><span id=\"blogtitle\"></span></a>\n            </div>\n\n        </div>\n    </div>\n</nav>\n\n<div [class.active]=\"sideBarIsOpened\" id=\"sidebar\">\n    <app-loginform></app-loginform>\n</div>\n";
     /***/
   },
 
@@ -72,6 +72,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
     __webpack_exports__["default"] = "\r\n<app-menu></app-menu>\r\n<div class=\"container\" id=\"wrap\" style=\"height: auto;\">\r\n    <router-outlet #routerOutlet=\"outlet\"></router-outlet>\r\n</div>\r\n<footer>\r\n    <div class=\"container\">\r\n        <span id=\"footer-text\"> 2019  All rights reserved</span>\r\n    </div>\r\n</footer>";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/loginform/loginform.component.html":
+  /*!******************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/loginform/loginform.component.html ***!
+    \******************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppLoginformLoginformComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<form [formGroup]=\"loginForm\" (ngSubmit)=\"login(loginForm.value)\" *ngIf=\"isAuthorized==false\" class=\"panel panel-default sidebar\" id=\"loginform\">\n    <h4>Log In</h4>\n    <span style=\"float: left; margin-left: 20px;\">Login</span>\n    <span id=\"sidebarLoginValMessage\" class=\"validation-message\">Input login</span>\n    <br />\n    <div class=\"loginform-editor-field\">\n        <input id=\"username\" type=\"text\" class=\"textbox-loginform\" formControlName=\"username\" /><br />\n    </div>\n    <span style=\"float: left; margin-left: 20px;\">Password</span>\n    <span id=\"sidebarPasswordValMessage\" class=\"validation-message\">Input password</span>\n    <br />\n    <div class=\"loginform-editor-field\">\n        <input id=\"password\" type=\"password\" class=\"textbox-loginform\" formControlName=\"password\" /><br />\n    </div>\n    <button id=\"logIn\" value=\"Login\" type=\"submit\" class=\"Login\" >Log In</button>\n    <i> • </i>\n    <a routerLink=\"/registration\" style=\"cursor: pointer;\">Registration</a>\n</form>\n\n<div *ngIf=\"isAuthorized\" class=\"panel panel-default sidebar\" id=\"logoutpanel\" style=\"text-align: left;\">\n    <ul>\n        <li id=\"li-createblog\"><a routerLink=\"/blog\">Blog</a></li>\n    </ul>\n    <input id=\"userid\" type=\"hidden\" />\n    <p style=\"margin-top: 20px; margin-left: 10px;\">\n        <i> • </i>\n        <button id=\"logOut\" (click)=\"logout()\">Sign Out</button>\n        <i> • </i>\n    </p>\n</div>\n";
     /***/
   },
 
@@ -654,6 +674,72 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./src/app/Adapters/UserAdapter.ts":
+  /*!*****************************************!*\
+    !*** ./src/app/Adapters/UserAdapter.ts ***!
+    \*****************************************/
+
+  /*! exports provided: UserAdapter */
+
+  /***/
+  function srcAppAdaptersUserAdapterTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "UserAdapter", function () {
+      return UserAdapter;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _Models_User__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../Models/User */
+    "./src/app/Models/User.ts");
+
+    var UserAdapter =
+    /*#__PURE__*/
+    function () {
+      function UserAdapter() {
+        _classCallCheck(this, UserAdapter);
+      }
+
+      _createClass(UserAdapter, [{
+        key: "adapt",
+        value: function adapt(item) {
+          if (item == null) return null;
+          var user = new _Models_User__WEBPACK_IMPORTED_MODULE_2__["User"]();
+          user.Id = item.Id;
+          user.UserName = item.UserName;
+          user.UserPassword = item.UserPassword;
+          return user;
+        }
+      }]);
+
+      return UserAdapter;
+    }();
+
+    UserAdapter = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], UserAdapter);
+    /***/
+  },
+
+  /***/
   "./src/app/Components/menu/menu.component.css":
   /*!****************************************************!*\
     !*** ./src/app/Components/menu/menu.component.css ***!
@@ -710,11 +796,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     function () {
       function MenuComponent() {
         _classCallCheck(this, MenuComponent);
+
+        this.sideBarIsOpened = false;
       }
 
       _createClass(MenuComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "toggleSideBar",
+        value: function toggleSideBar() {
+          if (this.sideBarIsOpened) {
+            this.sideBarIsOpened = false;
+          } else {
+            this.sideBarIsOpened = true;
+          }
+        }
       }]);
 
       return MenuComponent;
@@ -729,6 +826,266 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /*! ./menu.component.css */
       "./src/app/Components/menu/menu.component.css")).default]
     })], MenuComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/Models/User.ts":
+  /*!********************************!*\
+    !*** ./src/app/Models/User.ts ***!
+    \********************************/
+
+  /*! exports provided: User */
+
+  /***/
+  function srcAppModelsUserTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "User", function () {
+      return User;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var User = function User() {
+      _classCallCheck(this, User);
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/Services/auth/auth.service.ts":
+  /*!***********************************************!*\
+    !*** ./src/app/Services/auth/auth.service.ts ***!
+    \***********************************************/
+
+  /*! exports provided: AuthService */
+
+  /***/
+  function srcAppServicesAuthAuthServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AuthService", function () {
+      return AuthService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ngx-cookie-service */
+    "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var src_app_config_config_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/config/config.json */
+    "./src/app/config/config.json");
+
+    var src_app_config_config_json__WEBPACK_IMPORTED_MODULE_4___namespace =
+    /*#__PURE__*/
+    __webpack_require__.t(
+    /*! src/app/config/config.json */
+    "./src/app/config/config.json", 1);
+
+    var AuthService =
+    /*#__PURE__*/
+    function () {
+      function AuthService(cookieService, http) {
+        _classCallCheck(this, AuthService);
+
+        this.cookieService = cookieService;
+        this.http = http;
+      }
+
+      _createClass(AuthService, [{
+        key: "login",
+        value: function login(username, password) {
+          var _this = this;
+
+          var loginData = 'grant_type=password&username=' + username + '&password=' + password;
+          var url = src_app_config_config_json__WEBPACK_IMPORTED_MODULE_4__.apiUrl + src_app_config_config_json__WEBPACK_IMPORTED_MODULE_4__.authorizationServerUrl;
+          this.http.post(url, loginData).subscribe(function (resp) {
+            console.log(resp);
+            var token = resp.access_token;
+
+            if (token != undefined || token != null) {
+              _this.cookieService.set("token", token, 1);
+
+              _this.cookieService.set('user', username, 1);
+            }
+          });
+        }
+      }, {
+        key: "logout",
+        value: function logout() {
+          this.cookieService.delete('user');
+          this.cookieService.delete('token');
+          this.cookieService.delete('userid');
+          var userCookieValue = this.cookieService.get('user');
+          var tokenCookieValue = this.cookieService.get('token');
+          var useridCookieValue = this.cookieService.get('userid');
+
+          if (userCookieValue == "" && tokenCookieValue == "" && useridCookieValue == "") {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }, {
+        key: "GetAuthToken",
+        value: function GetAuthToken() {
+          var token = this.cookieService.get("token");
+          return "Bearer " + token;
+        }
+      }]);
+
+      return AuthService;
+    }();
+
+    AuthService.ctorParameters = function () {
+      return [{
+        type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__["CookieService"]
+      }, {
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+      }];
+    };
+
+    AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], AuthService);
+    /***/
+  },
+
+  /***/
+  "./src/app/Services/user/user.service.ts":
+  /*!***********************************************!*\
+    !*** ./src/app/Services/user/user.service.ts ***!
+    \***********************************************/
+
+  /*! exports provided: UserService */
+
+  /***/
+  function srcAppServicesUserUserServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "UserService", function () {
+      return UserService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var src_app_Adapters_UserAdapter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/Adapters/UserAdapter */
+    "./src/app/Adapters/UserAdapter.ts");
+    /* harmony import */
+
+
+    var src_app_config_config_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/config/config.json */
+    "./src/app/config/config.json");
+
+    var src_app_config_config_json__WEBPACK_IMPORTED_MODULE_4___namespace =
+    /*#__PURE__*/
+    __webpack_require__.t(
+    /*! src/app/config/config.json */
+    "./src/app/config/config.json", 1);
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var UserService =
+    /*#__PURE__*/
+    function () {
+      function UserService(http, adapter) {
+        _classCallCheck(this, UserService);
+
+        this.http = http;
+        this.adapter = adapter;
+      }
+
+      _createClass(UserService, [{
+        key: "GetUserByName",
+        value: function GetUserByName(userName) {
+          var _this2 = this;
+
+          var url = src_app_config_config_json__WEBPACK_IMPORTED_MODULE_4__.apiUrl + src_app_config_config_json__WEBPACK_IMPORTED_MODULE_4__.getUserByNameUrl + userName;
+          var blog = this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (data) {
+            return _this2.adapter.adapt(data);
+          }));
+          return blog;
+        }
+      }]);
+
+      return UserService;
+    }();
+
+    UserService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }, {
+        type: src_app_Adapters_UserAdapter__WEBPACK_IMPORTED_MODULE_3__["UserAdapter"]
+      }];
+    };
+
+    UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], UserService);
     /***/
   },
 
@@ -779,9 +1136,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var routes = [{
       path: '',
       loadChildren: function loadChildren() {
-        return Promise.all(
+        return __webpack_require__.e(
         /*! import() | post-post-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("post-post-module")]).then(__webpack_require__.bind(null,
+        "post-post-module").then(__webpack_require__.bind(null,
         /*! ./post/post.module */
         "./src/app/post/post.module.ts")).then(function (mod) {
           return mod.PostModule;
@@ -796,6 +1153,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         /*! ./blog/blog.module */
         "./src/app/blog/blog.module.ts")).then(function (mod) {
           return mod.BlogModule;
+        });
+      }
+    }, {
+      path: '',
+      loadChildren: function loadChildren() {
+        return Promise.all(
+        /*! import() | userblog-userblog-module */
+        [__webpack_require__.e("common"), __webpack_require__.e("userblog-userblog-module")]).then(__webpack_require__.bind(null,
+        /*! ./userblog/userblog.module */
+        "./src/app/userblog/userblog.module.ts")).then(function (mod) {
+          return mod.UserblogModule;
         });
       }
     }, {
@@ -927,43 +1295,280 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./app-routing.module */
     "./src/app/app-routing.module.ts");
     /* harmony import */
 
 
-    var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./app.component */
     "./src/app/app.component.ts");
     /* harmony import */
 
 
-    var _Components_menu_menu_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _Components_menu_menu_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./Components/menu/menu.component */
     "./src/app/Components/menu/menu.component.ts");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
     /* harmony import */
 
 
-    var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ./page-not-found/page-not-found.component */
     "./src/app/page-not-found/page-not-found.component.ts");
+    /* harmony import */
+
+
+    var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ngx-cookie-service */
+    "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+    /* harmony import */
+
+
+    var _loginform_loginform_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ./loginform/loginform.component */
+    "./src/app/loginform/loginform.component.ts");
+    /* harmony import */
+
+
+    var _Services_auth_auth_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! ./Services/auth/auth.service */
+    "./src/app/Services/auth/auth.service.ts");
+    /* harmony import */
+
+
+    var _Services_user_user_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! ./Services/user/user.service */
+    "./src/app/Services/user/user.service.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _Components_menu_menu_component__WEBPACK_IMPORTED_MODULE_5__["MenuComponent"], _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_7__["PageNotFoundComponent"]],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]],
-      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"], _Components_menu_menu_component__WEBPACK_IMPORTED_MODULE_6__["MenuComponent"], _page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_8__["PageNotFoundComponent"], _loginform_loginform_component__WEBPACK_IMPORTED_MODULE_10__["LoginformComponent"]],
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]],
+      providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_9__["CookieService"], _Services_auth_auth_service__WEBPACK_IMPORTED_MODULE_11__["AuthService"], _Services_user_user_service__WEBPACK_IMPORTED_MODULE_12__["UserService"]],
+      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })], AppModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/config/config.json":
+  /*!************************************!*\
+    !*** ./src/app/config/config.json ***!
+    \************************************/
+
+  /*! exports provided: apiUrl, getPostByIdUrl, getBlogByIdUrl, authorizationServerUrl, getUserByNameUrl, getBlogByUserIdUrl, updateBlogUrl, createBlogUrl, default */
+
+  /***/
+  function srcAppConfigConfigJson(module) {
+    module.exports = JSON.parse("{\"apiUrl\":\"http://webapiblog/api/\",\"getPostByIdUrl\":\"post/getpost/\",\"getBlogByIdUrl\":\"blog/getblogbyid/\",\"authorizationServerUrl\":\"http://webapiblog/token\",\"getUserByNameUrl\":\"user/getuserbyname/\",\"getBlogByUserIdUrl\":\"blog/getblogbyuserid/\",\"updateBlogUrl\":\"blog/updateblog\",\"createBlogUrl\":\"blog/createblog\"}");
+    /***/
+  },
+
+  /***/
+  "./src/app/loginform/loginform.component.css":
+  /*!***************************************************!*\
+    !*** ./src/app/loginform/loginform.component.css ***!
+    \***************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppLoginformLoginformComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luZm9ybS9sb2dpbmZvcm0uY29tcG9uZW50LmNzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/loginform/loginform.component.ts":
+  /*!**************************************************!*\
+    !*** ./src/app/loginform/loginform.component.ts ***!
+    \**************************************************/
+
+  /*! exports provided: LoginformComponent */
+
+  /***/
+  function srcAppLoginformLoginformComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "LoginformComponent", function () {
+      return LoginformComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_app_Services_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/app/Services/auth/auth.service */
+    "./src/app/Services/auth/auth.service.ts");
+    /* harmony import */
+
+
+    var src_app_config_config_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/config/config.json */
+    "./src/app/config/config.json");
+
+    var src_app_config_config_json__WEBPACK_IMPORTED_MODULE_3___namespace =
+    /*#__PURE__*/
+    __webpack_require__.t(
+    /*! src/app/config/config.json */
+    "./src/app/config/config.json", 1);
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ngx-cookie-service */
+    "./node_modules/ngx-cookie-service/ngx-cookie-service.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _Services_user_user_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../Services/user/user.service */
+    "./src/app/Services/user/user.service.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+
+    var LoginformComponent =
+    /*#__PURE__*/
+    function () {
+      function LoginformComponent(authService, userService, http, cookieService, router, formBuilder) {
+        _classCallCheck(this, LoginformComponent);
+
+        this.authService = authService;
+        this.userService = userService;
+        this.http = http;
+        this.cookieService = cookieService;
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.isAuthorized = false;
+        this.loginForm = this.formBuilder.group({
+          username: '',
+          password: ''
+        });
+      }
+
+      _createClass(LoginformComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }, {
+        key: "login",
+        value: function login(userLoginData) {
+          var _this3 = this;
+
+          var username = userLoginData.username;
+          var password = userLoginData.password;
+          var loginData = 'grant_type=password&username=' + username + '&password=' + password;
+          var url = src_app_config_config_json__WEBPACK_IMPORTED_MODULE_3__.authorizationServerUrl;
+          this.http.post(url, loginData).subscribe(function (resp) {
+            console.log(resp);
+            var token = resp.access_token;
+
+            if (token != undefined || token != null) {
+              _this3.cookieService.set("token", token, 1);
+
+              _this3.cookieService.set('user', username, 1);
+
+              var userName = _this3.cookieService.get("user");
+
+              _this3.userService.GetUserByName(userName).subscribe(function (data) {
+                var user = Object.assign({}, data);
+
+                _this3.cookieService.set("userid", user.Id.toString(), 1);
+
+                _this3.isAuthorized = true;
+              });
+            }
+          });
+        }
+      }, {
+        key: "logout",
+        value: function logout() {
+          var result = this.authService.logout();
+          if (result) this.isAuthorized = false;
+          this.router.navigate(['']);
+        }
+      }]);
+
+      return LoginformComponent;
+    }();
+
+    LoginformComponent.ctorParameters = function () {
+      return [{
+        type: src_app_Services_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]
+      }, {
+        type: _Services_user_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"]
+      }, {
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]
+      }, {
+        type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_5__["CookieService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"]
+      }, {
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"]
+      }];
+    };
+
+    LoginformComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-loginform',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./loginform.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/loginform/loginform.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./loginform.component.css */
+      "./src/app/loginform/loginform.component.css")).default]
+    })], LoginformComponent);
     /***/
   },
 

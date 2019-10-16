@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" *ngIf="isAuthorized==false" class="panel panel-default sidebar" id="loginform">
+    <h4>Log In</h4>
+    <span style="float: left; margin-left: 20px;">Login</span>
+    <span id="sidebarLoginValMessage" class="validation-message">Input login</span>
+    <br />
+    <div class="loginform-editor-field">
+        <input id="username" type="text" class="textbox-loginform" formControlName="username" /><br />
+    </div>
+    <span style="float: left; margin-left: 20px;">Password</span>
+    <span id="sidebarPasswordValMessage" class="validation-message">Input password</span>
+    <br />
+    <div class="loginform-editor-field">
+        <input id="password" type="password" class="textbox-loginform" formControlName="password" /><br />
+    </div>
+    <button id="logIn" value="Login" type="submit" class="Login" >Log In</button>
+    <i> • </i>
+    <a routerLink="/registration" style="cursor: pointer;">Registration</a>
+</form>
+
+<div *ngIf="isAuthorized" class="panel panel-default sidebar" id="logoutpanel" style="text-align: left;">
+    <ul>
+        <li id="li-createblog"><a routerLink="/blog">Blog</a></li>
+    </ul>
+    <input id="userid" type="hidden" />
+    <p style="margin-top: 20px; margin-left: 10px;">
+        <i> • </i>
+        <button id="logOut" (click)="logout()">Sign Out</button>
+        <i> • </i>
+    </p>
+</div>

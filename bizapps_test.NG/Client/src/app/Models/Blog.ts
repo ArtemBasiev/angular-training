@@ -1,6 +1,7 @@
 
 import {Category} from 'src/app/Models/Category';
 import { Post } from './Post';
+import { User } from './User';
 
 export class Blog {
 
@@ -13,4 +14,6 @@ export class Blog {
   public BlogCategories: Array<Category> = new Array<Category>();
 
   public BlogPosts: Array<Post> = new Array<Post>();
+
+  public CreatedBy: User;
 }

@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
-import {Blog} from 'src/app/Models/Blog';
 import { HttpClient } from '@angular/common/http';
+import { UserAdapter } from 'src/app/Adapters/UserAdapter';
+import { User } from 'src/app/Models/User';
 import { Observable } from 'rxjs/internal/Observable';
 import config from 'src/app/config/config.json';
 import { map } from 'rxjs/operators';
-import { BlogAdapter } from '../Adapters/BlogAdapter';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BlogService {
+export class UserService {
 
   constructor(
     private http: HttpClient,
-    private adapter: BlogAdapter
+    private adapter: UserAdapter
   ) { }
 
-  GetBlogByID(blogID:  number | string) :Observable<Blog> {
-    let url = config.apiUrl+config.getBlogByIdUrl+blogID;
-    let blog = this.http.get<Blog>(url).pipe(
+  GetUserByName(userName: string) :Observable<User> {
+    let url = config.apiUrl+config.getUserByNameUrl+userName;
+    let blog = this.http.get<User>(url).pipe(
      map(data => this.adapter.adapt(data))
    );
    return blog;
   }
+
 }

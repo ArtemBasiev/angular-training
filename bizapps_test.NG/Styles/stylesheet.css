@@ -852,3 +852,11 @@ body {
 .active-category {
     background-color: yellow;
 }
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}

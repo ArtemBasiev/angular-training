@@ -1,5 +1,10 @@
 {
-    "apiUrl" :"http://webapiblog/",
+    "apiUrl" :"http://webapiblog/api/",
     "getPostByIdUrl": "post/getpost/",
-    "getBlogByIdUrl": "blog/getblogbyid/"
+    "getBlogByIdUrl": "blog/getblogbyid/",
+    "authorizationServerUrl": "http://webapiblog/token",
+    "getUserByNameUrl": "user/getuserbyname/",
+    "getBlogByUserIdUrl": "blog/getblogbyuserid/",
+    "updateBlogUrl": "blog/updateblog",
+    "createBlogUrl": "blog/createblog"
   }

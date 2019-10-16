@@ -1,0 +1,10 @@
+<div id="divCreateBlog" class="main-container">
+    <form [formGroup]="createBlogForm" (ngSubmit)="createBlog(createBlogForm.value)">
+            <h4>Create your blog here</h4><br /><br />
+            <span>Blog title</span>
+            <input id="textBlogTitle" name="BlogTitle" type="text" /><br />
+            <button class="buttonOnWhitePanel" type="submit">Create</button>
+            <span id="blogcreation-message" style="color: red"></span>
+            <span id="blogcreationValidationMessage" class="validation-message" >Blog Title can't be empty!</span> 
+    </form>
+</div>

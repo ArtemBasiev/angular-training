@@ -1,0 +1,64 @@
+<div id="userblog">
+    <div id="divEditBlog" >
+        <ul class="nav nav-tabs" role="tablist">
+            <li [class.active]="activeTabId=='blog'" class="tab"><a (click)="showTab('blog')">Blog info</a></li>
+            <li [class.active]="activeTabId=='post'" class="tab"><a (click)="showTab('post')">Posts</a></li>
+            <li [class.active]="activeTabId=='category'" class="tab"><a (click)="showTab('category')">Categories</a></li>
+        </ul>
+        <div class="main-container">
+
+            <div [class.hidden]="activeTabId!='blog'" id="blog" class="div-tab">
+                <input id="blogid" type="hidden" data-bind="value: ViewModelsKO.EditableBlogViewModel.blogId" />
+                <span>Your blog: </span>
+                <p>
+                    <button class="glyph-btn" (click)="toggleEditMod()"><i class="glyphicon glyphicon-pencil"></i>...</button>
+                    <span [class.hidden]="editModIsEnabled" id="spanBlogTitle">{{userBlog.BlogTitle}}</span>
+                    <input [class.hidden]="editModIsEnabled==false" id="textEditableBlogTitle" type="text" style="width: 100px;" [(ngModel)]="userBlog.BlogTitle" />
+                    <button [class.hidden]="editModIsEnabled==false" id="btnSaveBlog" class="glyph-btn btn-save" (click)="updateBlog()">Save</button>
+                    <span id="blogTitleValidationMessage" class="validation-message">Blog Title can't be empty!</span>
+                </p>
+
+                <a routerLink="/blog/{{userBlog.Id}}" class="buttonOnWhitePanel">Review</a>
+                <button class="btn btn-danger">Delete</button>
+            </div>
+
+            <div [class.hidden]="activeTabId!='post'" id="posts"  class="div-tab">
+                <h4>Your posts:</h4>
+                <ul class="CategoryList">
+                    <li *ngFor="let post of userBlog.BlogPosts">
+                        <input class="hidden-postid" type="hidden" [value]="post.Id" />
+                        <button class="glyph-btn" onclick="PostCRUD.EnablePostEditing($(this));" data-toggle="editpost"><i class="glyphicon glyphicon-pencil"></i>...</button>
+                        <button class="glyph-btn" onclick="PostCRUD.DeletePost($(this));"><i class="glyphicon glyphicon-trash"></i></button>
+                        <span>{{post.PostTitle}}</span>
+                    </li>
+                </ul>
+                <a onclick="PostCRUD.EnablePostCreation($(this));" data-toggle="editpost" style="cursor: pointer;">To post creation...</a>
+            </div>
+        
+            <div [class.hidden]="activeTabId!='category'" id="categories" style="display: none;" class="div-tab" >
+                <h4>Your categories:</h4>
+                <ul class="CategoryList">
+                    <li *ngFor="let category of userBlog.BlogCategories">
+                        <input class="hidden-categoryid" type="hidden" [value]="category.Id" />
+                        <button class="glyph-btn" onclick="CategoryCRUD.EnableCategoryEditing($(this));"><i class="glyphicon glyphicon-pencil"></i>...</button>
+                        <button class="glyph-btn" onclick="CategoryCRUD.DeleteCategory($(this));"><i class="glyphicon glyphicon-trash"></i></button>
+                        <span class="span-categoryname">{{category.CategoryName}}</span>
+                        <input class="text-categoryedit" type="text" style="width: 100px;" [(ngModel)]="category.CategoryName"/>
+                        <button class="glyph-btn btn-save" style="display: none;" onclick="CategoryCRUD.SaveCategoryChanges($(this));">Save</button>
+                        <span class="category-validation-message validation-message">Category Name can't be empty!</span>
+                    </li>
+                </ul><br/>
+                     <p style="margin-bottom: 0; padding-bottom: 5px; padding-top: 5px;">
+                         <b> <label>Category name:</label> </b>
+                         <input id="textCategoryName" type="text" class="textboxPostTitle" style="width: 250px;" />
+                         <button id="ButtonCreateCategory" onclick="CategoryCRUD.CreateCategory();" class="buttonOnWhitePanel">Create</button>
+                         <span id="spanCategoryErrorMessage" class="validation-message">Category Name can't be empty!</span>
+                     </p>
+               
+                
+            </div>
+
+        </div>
+    </div>
+
+</div>

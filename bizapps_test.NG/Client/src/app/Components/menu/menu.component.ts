@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+ sideBarIsOpened: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleSideBar(){
+
+    if(this.sideBarIsOpened){
+      this.sideBarIsOpened = false;
+    } else {
+      this.sideBarIsOpened = true;
+    }
   }
 
 }
